@@ -13,6 +13,8 @@
 		795FE21A26E39458006EFBCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795FE21926E39458006EFBCC /* Preview Assets.xcassets */; };
 		795FE22526E39459006EFBCC /* vertretungsplan_pguTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE22426E39459006EFBCC /* vertretungsplan_pguTests.swift */; };
 		795FE23026E39459006EFBCC /* vertretungsplan_pguUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE22F26E39459006EFBCC /* vertretungsplan_pguUITests.swift */; };
+		796DBDF726E3B53F002DD066 /* FullPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DBDF626E3B53F002DD066 /* FullPlanView.swift */; };
+		796DBDF926E3B57F002DD066 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DBDF826E3B57F002DD066 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		795FE22B26E39459006EFBCC /* vertretungsplan-pguUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "vertretungsplan-pguUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		795FE22F26E39459006EFBCC /* vertretungsplan_pguUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vertretungsplan_pguUITests.swift; sourceTree = "<group>"; };
 		795FE23126E39459006EFBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		796DBDF626E3B53F002DD066 /* FullPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPlanView.swift; sourceTree = "<group>"; };
+		796DBDF826E3B57F002DD066 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,11 @@
 			children = (
 				795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */,
 				795FE21426E39454006EFBCC /* ContentView.swift */,
+				796DBDF626E3B53F002DD066 /* FullPlanView.swift */,
 				795FE21626E39458006EFBCC /* Assets.xcassets */,
 				795FE21B26E39458006EFBCC /* Info.plist */,
 				795FE21826E39458006EFBCC /* Preview Content */,
+				796DBDF826E3B57F002DD066 /* Utilities.swift */,
 			);
 			path = "vertretungsplan-pgu";
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796DBDF726E3B53F002DD066 /* FullPlanView.swift in Sources */,
 				795FE21526E39454006EFBCC /* ContentView.swift in Sources */,
+				796DBDF926E3B57F002DD066 /* Utilities.swift in Sources */,
 				795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +430,7 @@
 				DEVELOPMENT_TEAM = AGE6GEC4L4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "vertretungsplan-pgu/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +452,7 @@
 				DEVELOPMENT_TEAM = AGE6GEC4L4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "vertretungsplan-pgu/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
