@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7900165A26E545F200453165 /* ZoomVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900165926E545F200453165 /* ZoomVIew.swift */; };
 		795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */; };
 		795FE21526E39454006EFBCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE21426E39454006EFBCC /* ContentView.swift */; };
 		795FE21726E39458006EFBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795FE21626E39458006EFBCC /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7900165926E545F200453165 /* ZoomVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomVIew.swift; sourceTree = "<group>"; };
 		795FE20F26E39454006EFBCC /* vertretungsplan-pgu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vertretungsplan-pgu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vertretungsplan_pguApp.swift; sourceTree = "<group>"; };
 		795FE21426E39454006EFBCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				795FE21B26E39458006EFBCC /* Info.plist */,
 				795FE21826E39458006EFBCC /* Preview Content */,
 				796DBDF826E3B57F002DD066 /* Utilities.swift */,
+				7900165926E545F200453165 /* ZoomVIew.swift */,
 			);
 			path = "vertretungsplan-pgu";
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				796DBDF726E3B53F002DD066 /* PlanView.swift in Sources */,
+				7900165A26E545F200453165 /* ZoomVIew.swift in Sources */,
 				795FE21526E39454006EFBCC /* ContentView.swift in Sources */,
 				796DBDFB26E50830002DD066 /* PlanViews.swift in Sources */,
 				796DBDF926E3B57F002DD066 /* Utilities.swift in Sources */,

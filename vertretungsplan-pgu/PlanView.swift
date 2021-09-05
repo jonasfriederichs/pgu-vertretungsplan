@@ -50,34 +50,28 @@ struct ImagePlanView: View {
     
     var body: some View {
         
-        AsyncImage(url: url) { phase in
-            switch phase {
-                
-            case .empty:
-                ZStack {
-                    Color.purple.opacity(0.1)
-                    ProgressView()
-                }
-            case .success(let image):
-                image
-                    .resizable()
-                    .scaledToFit()
-                    .gesture(MagnificationGesture().onChanged { val in
-                                let delta = val / self.lastScaleValue
-                                self.lastScaleValue = val
-                                let newScale = image.scale * delta
-
-                    //... anything else e.g. clamping the newScale
-                    }.onEnded { val in
-                      // without this the next gesture will be broken
-                      self.lastScaleValue = 1.0
-                    })
+        ZoomableScrollView {
+            
+            AsyncImage(url: url) { phase in
+                switch phase {
                     
+                case .empty:
+                    ZStack {
+                        Color.purple.opacity(0.1)
+                        ProgressView()
+                    }
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFit()
+                    
+                    
+                case .failure(_):
+                    Image(systemName: "exclamationmark.icloud")
+                @unknown default:
+                    Image(systemName: "exclamationmark.icloud")
+                }
                 
-            case .failure(_):
-                Image(systemName: "exclamationmark.icloud")
-            @unknown default:
-                Image(systemName: "exclamationmark.icloud")
             }
             
         }
@@ -112,12 +106,12 @@ struct PagerView<Content: View>: View {
                 .animation(.interactiveSpring(), value: 1)
                 .gesture(
                     DragGesture().updating(self.$translation) { value, state, _ in
-                    state = value.translation.width
-                }.onEnded { value in
-                    let offset = value.translation.width / geometry.size.width
-                    let newIndex = (CGFloat(self.currentIndex) - offset).rounded()
-                    self.currentIndex = min(max(Int(newIndex), 0), self.pageCount - 1)
-                }
+                        state = value.translation.width
+                    }.onEnded { value in
+                        let offset = value.translation.width / geometry.size.width
+                        let newIndex = (CGFloat(self.currentIndex) - offset).rounded()
+                        self.currentIndex = min(max(Int(newIndex), 0), self.pageCount - 1)
+                    }
                 )
                 
                 VStack {
