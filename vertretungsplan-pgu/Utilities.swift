@@ -8,6 +8,26 @@
 import Foundation
 
 
+func getImageURL(day: day) async throws -> [URL?] {
+
+    var urls: [[URL?]] = [[]]
+
+        do {
+            urls = try await createImageURLs()
+        } catch {
+            throw error
+        }
+        
+        switch day {
+        case .today:
+            return urls[0]
+        case .tomorrow:
+            return urls[1]
+        }
+    
+}
+
+
 func createImageURLs() async throws -> [[URL?]] {
     
     var todayURLs: [URL?] = []
@@ -16,13 +36,13 @@ func createImageURLs() async throws -> [[URL?]] {
     let urlSession = URLSession.shared
     
     do {
-        let dataTask = try await urlSession.data(from: createImageURL(day: .today))
+        let dataTask = try await urlSession.data(from: createPGUURL(day: .today))
         
         if dataTask.1.mimeType == "image/png" {
-            todayURLs.append(createImageURL(day: .today))
+            todayURLs.append(createPGUURL(day: .today))
         } else {
-            todayURLs.append(createImageURL(day: .today1))
-            todayURLs.append(createImageURL(day: .today2))
+            todayURLs.append(createPGUURL(day: .today1))
+            todayURLs.append(createPGUURL(day: .today2))
         }
         
     } catch {
@@ -30,13 +50,13 @@ func createImageURLs() async throws -> [[URL?]] {
     }
     
     do {
-        let dataTask = try await urlSession.data(from: createImageURL(day: .tomorrow))
+        let dataTask = try await urlSession.data(from: createPGUURL(day: .tomorrow))
         
         if dataTask.1.mimeType == "image/png" {
-            tomorrowURLs.append(createImageURL(day: .tomorrow))
+            tomorrowURLs.append(createPGUURL(day: .tomorrow))
         } else {
-            tomorrowURLs.append(createImageURL(day: .tomorrow1))
-            tomorrowURLs.append(createImageURL(day: .tomorrow2))
+            tomorrowURLs.append(createPGUURL(day: .tomorrow1))
+            tomorrowURLs.append(createPGUURL(day: .tomorrow2))
         }
         
     } catch {
@@ -48,7 +68,7 @@ func createImageURLs() async throws -> [[URL?]] {
 }
 
 
-func createImageURL(day: day) -> URL {
+func createPGUURL(day: multipleDay) -> URL {
     
     var components = URLComponents()
     components.scheme = "https"
@@ -69,4 +89,5 @@ func createImageURL(day: day) -> URL {
 
 
 
-enum day { case today, today1, today2, tomorrow, tomorrow1, tomorrow2 }
+enum multipleDay { case today, today1, today2, tomorrow, tomorrow1, tomorrow2 }
+enum day { case today, tomorrow }

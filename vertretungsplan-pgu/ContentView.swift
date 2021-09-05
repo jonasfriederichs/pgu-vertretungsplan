@@ -9,7 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        FullPlanView(day: .today)
+        
+        TabView {
+            
+            PlanViews()
+                .tabItem {
+                    Image(systemName: "doc")
+                    Text("Vertretungspläne")
+                }
+            
+        }
+        
     }
 }
 
