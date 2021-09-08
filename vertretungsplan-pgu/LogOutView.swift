@@ -14,7 +14,7 @@ struct LogOutView: View {
     var body: some View {
         Button("Sign Out") {
             loggedIn = false
-            UserDefaults.standard.set(false, forKey: "loggedIn")
+            UserDefaultsUtils().setLogIn(status: false)
         }
     }
 }

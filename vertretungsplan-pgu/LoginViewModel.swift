@@ -15,11 +15,11 @@ class LoginViewModel {
     
     func loginButtonPressed(username: String, password: String) -> Bool {
         
-        let hashed = SHA256.hash(data: Data(password.utf8))
-        let hashedString = hashed.compactMap { String(format: "%02x", $0) }.joined()
+        let hashedString = CryptoUtils().encryptWithSHA256(string: password)
         
         if username.lowercased() == "schueler" && hashedString == hashedPassword {
             
+            UserDefaultsUtils().setLogIn(status: true)
             return true
             
         } else {

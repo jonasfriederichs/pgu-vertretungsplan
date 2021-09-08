@@ -38,7 +38,6 @@ struct LoginView: View {
             Button("LOGIN") {
                 let result = viewModel.loginButtonPressed(username: username, password: password)
                 loggedIn = result
-                UserDefaults.standard.set(result, forKey: "loggedIn")
             }
             .font(.headline.bold())
             .frame(width: UIScreen.main.bounds.width - 50, height: 50)

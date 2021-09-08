@@ -1,85 +1,11 @@
 //
-//  FullPlanView.swift
-//  vertretungsplan-pgu
+//  PagerView.swift
+//  PagerView
 //
-//  Created by Wolf Jonas Friederichs on 9/4/21.
+//  Created by Wolf Jonas Friederichs on 9/8/21.
 //
 
 import SwiftUI
-
-
-struct PlanView: View {
-    
-    var url: [URL?]
-    
-    @State var currentIndex = 0
-    
-    var body: some View {
-        
-        if url.count > 0 {
-            
-            PagerView(pageCount: url.count, currentIndex: $currentIndex) {
-                
-                ForEach(1...url.count, id: \.self) { urlCount in
-                    
-                    ImagePlanView(url: url[urlCount-1])
-                    
-                }
-                
-            }
-        } else {
-            
-            Spacer()
-            
-            ProgressView()
-            
-            Spacer()
-            
-        }
-        
-    }
-    
-}
-
-
-struct ImagePlanView: View {
-    
-    var url: URL?
-    
-    @State var lastScaleValue: CGFloat = 1.0
-    
-    var body: some View {
-        
-        ZoomableScrollView {
-            
-            AsyncImage(url: url) { phase in
-                switch phase {
-                    
-                case .empty:
-                    ZStack {
-                        Color.purple.opacity(0.1)
-                        ProgressView()
-                    }
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFit()
-                    
-                    
-                case .failure(_):
-                    Image(systemName: "exclamationmark.icloud")
-                @unknown default:
-                    Image(systemName: "exclamationmark.icloud")
-                }
-                
-            }
-            
-        }
-        
-    }
-    
-}
-
 
 struct PagerView<Content: View>: View {
     let pageCount: Int
@@ -130,4 +56,3 @@ struct PagerView<Content: View>: View {
         }
     }
 }
-
