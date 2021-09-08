@@ -23,13 +23,12 @@ struct PlanViews: View {
                     }
                 })
                     .pickerStyle(.segmented)
-                    .padding(.top)
+                    .padding(.vertical, 20)
                 
                 PlanView(url: urls[selectedView-1])
                 
             }
             .padding()
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
             // When appearing get image URLs
             .onAppear { Task { do { urls = try await ImageURLUtils().createImageURLs() } catch { print(error) } } }
             
@@ -84,6 +83,8 @@ struct PlanView: View {
 
 struct ImagePlanView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var url: URL?
     
     @State var lastScaleValue: CGFloat = 1.0
@@ -104,6 +105,7 @@ struct ImagePlanView: View {
                     image
                         .resizable()
                         .scaledToFit()
+                        .if(colorScheme == .dark) { $0.colorInvert() }
                     
                     
                 case .failure(_):

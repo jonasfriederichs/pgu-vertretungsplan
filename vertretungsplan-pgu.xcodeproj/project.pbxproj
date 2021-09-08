@@ -14,6 +14,7 @@
 		792AFE2B26E904A90074771F /* ImageURLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2A26E904A90074771F /* ImageURLUtils.swift */; };
 		792AFE2E26E905420074771F /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2D26E905420074771F /* PagerView.swift */; };
 		792AFE3026E905C70074771F /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2F26E905C70074771F /* UserDefaultsUtils.swift */; };
+		792AFE3226E90C5A0074771F /* ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE3126E90C5A0074771F /* ConditionalModifier.swift */; };
 		795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */; };
 		795FE21526E39454006EFBCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE21426E39454006EFBCC /* ContentView.swift */; };
 		795FE21726E39458006EFBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795FE21626E39458006EFBCC /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		792AFE2A26E904A90074771F /* ImageURLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLUtils.swift; sourceTree = "<group>"; };
 		792AFE2D26E905420074771F /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		792AFE2F26E905C70074771F /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
+		792AFE3126E90C5A0074771F /* ConditionalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalModifier.swift; sourceTree = "<group>"; };
 		795FE20F26E39454006EFBCC /* vertretungsplan-pgu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vertretungsplan-pgu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vertretungsplan_pguApp.swift; sourceTree = "<group>"; };
 		795FE21426E39454006EFBCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				792AFE2D26E905420074771F /* PagerView.swift */,
 				7900165926E545F200453165 /* ZoomVIew.swift */,
+				792AFE3126E90C5A0074771F /* ConditionalModifier.swift */,
 			);
 			path = ViewTypes;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				792AFE2B26E904A90074771F /* ImageURLUtils.swift in Sources */,
 				792AFE2626E903690074771F /* CryptoUtils.swift in Sources */,
 				795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */,
+				792AFE3226E90C5A0074771F /* ConditionalModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

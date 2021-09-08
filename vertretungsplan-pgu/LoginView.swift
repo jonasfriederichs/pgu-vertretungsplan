@@ -11,6 +11,8 @@ struct LoginView: View {
     
     let viewModel = LoginViewModel()
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @Binding var loggedIn: Bool
     
     @State var username = ""
@@ -19,14 +21,12 @@ struct LoginView: View {
     var body: some View {
         VStack {
             
-//            Spacer()
-//
-//            Image("logo-1")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 500, height: 100, alignment: .center)
-//                .aspectRatio(contentMode: .fit)
-//                .colorInvert()
+            Spacer()
+
+            Image("pgu-logo")
+                .resizable()
+                .scaledToFit()
+                .if(colorScheme == .light) { $0.colorInvert() }
             
             Spacer()
             
@@ -69,6 +69,8 @@ struct TextFields: View {
                     .frame(width: 35)
                 
                 TextField("USERNAME", text: $email)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
                     .padding()
                     .background(Color.white.opacity(email == "" ? 0 : 0.12))
                     .cornerRadius(15)
@@ -94,5 +96,12 @@ struct TextFields: View {
             .padding()
             
         }
+    }
+}
+
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView(loggedIn: .constant(false))
     }
 }
