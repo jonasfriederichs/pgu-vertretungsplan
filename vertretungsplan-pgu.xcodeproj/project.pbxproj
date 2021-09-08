@@ -10,6 +10,8 @@
 		7900165A26E545F200453165 /* ZoomVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900165926E545F200453165 /* ZoomVIew.swift */; };
 		792AFE2426E8CE350074771F /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2326E8CE350074771F /* LogOutView.swift */; };
 		792AFE2626E903690074771F /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2526E903690074771F /* CryptoUtils.swift */; };
+		792AFE2926E9046E0074771F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2826E9046E0074771F /* Constants.swift */; };
+		792AFE2B26E904A90074771F /* ImageURLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2A26E904A90074771F /* ImageURLUtils.swift */; };
 		795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */; };
 		795FE21526E39454006EFBCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE21426E39454006EFBCC /* ContentView.swift */; };
 		795FE21726E39458006EFBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795FE21626E39458006EFBCC /* Assets.xcassets */; };
@@ -17,7 +19,6 @@
 		795FE22526E39459006EFBCC /* vertretungsplan_pguTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE22426E39459006EFBCC /* vertretungsplan_pguTests.swift */; };
 		795FE23026E39459006EFBCC /* vertretungsplan_pguUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE22F26E39459006EFBCC /* vertretungsplan_pguUITests.swift */; };
 		796DBDF726E3B53F002DD066 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DBDF626E3B53F002DD066 /* PlanView.swift */; };
-		796DBDF926E3B57F002DD066 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DBDF826E3B57F002DD066 /* Utilities.swift */; };
 		796DBDFB26E50830002DD066 /* PlanViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DBDFA26E50830002DD066 /* PlanViews.swift */; };
 		7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998E6D026E5F67400D8E878 /* LoginView.swift */; };
 		7998E6D326E6186F00D8E878 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998E6D226E6186F00D8E878 /* LoginViewModel.swift */; };
@@ -44,6 +45,8 @@
 		7900165926E545F200453165 /* ZoomVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomVIew.swift; sourceTree = "<group>"; };
 		792AFE2326E8CE350074771F /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
 		792AFE2526E903690074771F /* CryptoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtils.swift; sourceTree = "<group>"; };
+		792AFE2826E9046E0074771F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		792AFE2A26E904A90074771F /* ImageURLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLUtils.swift; sourceTree = "<group>"; };
 		795FE20F26E39454006EFBCC /* vertretungsplan-pgu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vertretungsplan-pgu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vertretungsplan_pguApp.swift; sourceTree = "<group>"; };
 		795FE21426E39454006EFBCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 		795FE22F26E39459006EFBCC /* vertretungsplan_pguUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vertretungsplan_pguUITests.swift; sourceTree = "<group>"; };
 		795FE23126E39459006EFBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		796DBDF626E3B53F002DD066 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
-		796DBDF826E3B57F002DD066 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		796DBDFA26E50830002DD066 /* PlanViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViews.swift; sourceTree = "<group>"; };
 		7998E6D026E5F67400D8E878 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7998E6D226E6186F00D8E878 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				792AFE2526E903690074771F /* CryptoUtils.swift */,
+				792AFE2826E9046E0074771F /* Constants.swift */,
+				792AFE2A26E904A90074771F /* ImageURLUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -130,7 +134,6 @@
 				795FE21626E39458006EFBCC /* Assets.xcassets */,
 				795FE21B26E39458006EFBCC /* Info.plist */,
 				795FE21826E39458006EFBCC /* Preview Content */,
-				796DBDF826E3B57F002DD066 /* Utilities.swift */,
 				7900165926E545F200453165 /* ZoomVIew.swift */,
 			);
 			path = "vertretungsplan-pgu";
@@ -292,13 +295,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				796DBDF726E3B53F002DD066 /* PlanView.swift in Sources */,
+				792AFE2926E9046E0074771F /* Constants.swift in Sources */,
 				7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */,
 				7900165A26E545F200453165 /* ZoomVIew.swift in Sources */,
 				795FE21526E39454006EFBCC /* ContentView.swift in Sources */,
 				7998E6D326E6186F00D8E878 /* LoginViewModel.swift in Sources */,
 				792AFE2426E8CE350074771F /* LogOutView.swift in Sources */,
 				796DBDFB26E50830002DD066 /* PlanViews.swift in Sources */,
-				796DBDF926E3B57F002DD066 /* Utilities.swift in Sources */,
+				792AFE2B26E904A90074771F /* ImageURLUtils.swift in Sources */,
 				792AFE2626E903690074771F /* CryptoUtils.swift in Sources */,
 				795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */,
 			);
