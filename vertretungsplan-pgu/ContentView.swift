@@ -8,15 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
+    
     var body: some View {
         
-        TabView {
+        if loggedIn == false {
             
-            PlanViews()
-                .tabItem {
-                    Image(systemName: "doc")
-                    Text("Vertretungspläne")
-                }
+            LoginView(loggedIn: $loggedIn)
+            
+        } else {
+            
+            TabView {
+                
+                PlanViews()
+                    .tabItem {
+                        Image(systemName: "doc")
+                        Text("Vertretungspläne")
+                    }
+                
+                LogOutView(loggedIn: $loggedIn)
+                    .tabItem {
+                        Image(systemName: "trash")
+                        Text("LogOut")
+                    }
+                
+            }
             
         }
         

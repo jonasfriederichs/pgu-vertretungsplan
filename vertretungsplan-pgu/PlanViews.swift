@@ -29,7 +29,7 @@ struct PlanViews: View {
         }
         .padding()
         // When appearing get image URLs
-        .onAppear { async { do { urls = try await createImageURLs() } catch { print(error) } } }
+        .onAppear { Task { do { urls = try await createImageURLs() } catch { print(error) } } }
         
     }
     
