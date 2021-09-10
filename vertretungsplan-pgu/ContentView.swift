@@ -27,6 +27,12 @@ struct ContentView: View {
                         Text("Vertretungspläne")
                     }
                 
+                PDFPlanViews(role: .teacher)
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Lehrer")
+                    }
+                
                 LogOutView(loggedIn: $loggedIn)
                     .tabItem {
                         Image(systemName: "trash")

@@ -10,7 +10,7 @@ import Foundation
 
 struct ImageURLUtils {
     
-    func getImageURL(day: day) async throws -> [URL?] {
+    func getImageURL(day: Day) async throws -> [URL?] {
 
         var urls: [[URL?]] = [[]]
 
@@ -89,10 +89,26 @@ struct ImageURLUtils {
         
     }
 
+    func createPDFURL(role: Role, day: Day) -> URL {
+        
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "www.pgu.de"
+        
+        switch day {
+        case .today:
+            components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/LZ_heute.pdf"
+        case .tomorrow:
+            components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/LZ_morgen.pdf"
+        }
+        
+        return components.url!
+        
+    }
 
 
     enum multipleDay { case today, today1, today2, tomorrow, tomorrow1, tomorrow2 }
-    enum day { case today, tomorrow }
+    
 
     
 }

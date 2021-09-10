@@ -15,6 +15,10 @@
 		792AFE2E26E905420074771F /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2D26E905420074771F /* PagerView.swift */; };
 		792AFE3026E905C70074771F /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2F26E905C70074771F /* UserDefaultsUtils.swift */; };
 		792AFE3226E90C5A0074771F /* ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE3126E90C5A0074771F /* ConditionalModifier.swift */; };
+		79318D5126EBCA620051AB70 /* PDFImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79318D5026EBCA620051AB70 /* PDFImageUtils.swift */; };
+		79318D5326EBCCEE0051AB70 /* NetworkingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79318D5226EBCCEE0051AB70 /* NetworkingUtils.swift */; };
+		79318D5526EBCD240051AB70 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79318D5426EBCD240051AB70 /* Enums.swift */; };
+		79318D5726EBDAB40051AB70 /* PDFPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79318D5626EBDAB40051AB70 /* PDFPlanView.swift */; };
 		795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */; };
 		795FE21526E39454006EFBCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE21426E39454006EFBCC /* ContentView.swift */; };
 		795FE21726E39458006EFBCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795FE21626E39458006EFBCC /* Assets.xcassets */; };
@@ -52,6 +56,10 @@
 		792AFE2D26E905420074771F /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		792AFE2F26E905C70074771F /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 		792AFE3126E90C5A0074771F /* ConditionalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalModifier.swift; sourceTree = "<group>"; };
+		79318D5026EBCA620051AB70 /* PDFImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFImageUtils.swift; sourceTree = "<group>"; };
+		79318D5226EBCCEE0051AB70 /* NetworkingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingUtils.swift; sourceTree = "<group>"; };
+		79318D5426EBCD240051AB70 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		79318D5626EBDAB40051AB70 /* PDFPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPlanView.swift; sourceTree = "<group>"; };
 		795FE20F26E39454006EFBCC /* vertretungsplan-pgu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vertretungsplan-pgu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vertretungsplan_pguApp.swift; sourceTree = "<group>"; };
 		795FE21426E39454006EFBCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +109,9 @@
 				792AFE2826E9046E0074771F /* Constants.swift */,
 				792AFE2A26E904A90074771F /* ImageURLUtils.swift */,
 				792AFE2F26E905C70074771F /* UserDefaultsUtils.swift */,
+				79318D5026EBCA620051AB70 /* PDFImageUtils.swift */,
+				79318D5226EBCCEE0051AB70 /* NetworkingUtils.swift */,
+				79318D5426EBCD240051AB70 /* Enums.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 				795FE21426E39454006EFBCC /* ContentView.swift */,
 				792AFE2326E8CE350074771F /* LogOutView.swift */,
 				796DBDFA26E50830002DD066 /* PlanViews.swift */,
+				79318D5626EBDAB40051AB70 /* PDFPlanView.swift */,
 				7998E6D026E5F67400D8E878 /* LoginView.swift */,
 				7998E6D226E6186F00D8E878 /* LoginViewModel.swift */,
 				792AFE2726E904290074771F /* Utilities */,
@@ -312,14 +324,18 @@
 				7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */,
 				792AFE3026E905C70074771F /* UserDefaultsUtils.swift in Sources */,
 				7900165A26E545F200453165 /* ZoomVIew.swift in Sources */,
+				79318D5726EBDAB40051AB70 /* PDFPlanView.swift in Sources */,
 				792AFE2E26E905420074771F /* PagerView.swift in Sources */,
 				795FE21526E39454006EFBCC /* ContentView.swift in Sources */,
 				7998E6D326E6186F00D8E878 /* LoginViewModel.swift in Sources */,
 				792AFE2426E8CE350074771F /* LogOutView.swift in Sources */,
 				796DBDFB26E50830002DD066 /* PlanViews.swift in Sources */,
 				792AFE2B26E904A90074771F /* ImageURLUtils.swift in Sources */,
+				79318D5126EBCA620051AB70 /* PDFImageUtils.swift in Sources */,
 				792AFE2626E903690074771F /* CryptoUtils.swift in Sources */,
 				795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */,
+				79318D5326EBCCEE0051AB70 /* NetworkingUtils.swift in Sources */,
+				79318D5526EBCD240051AB70 /* Enums.swift in Sources */,
 				792AFE3226E90C5A0074771F /* ConditionalModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -462,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -524,7 +540,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AGE6GEC4L4;
 				INFOPLIST_FILE = "vertretungsplan-pguTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -546,7 +562,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AGE6GEC4L4;
 				INFOPLIST_FILE = "vertretungsplan-pguTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
