@@ -86,9 +86,7 @@ struct ImagePlanView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var url: URL?
-    
-    @State var lastScaleValue: CGFloat = 1.0
-    
+
     var body: some View {
         
         ZoomableScrollView {

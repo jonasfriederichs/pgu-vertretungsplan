@@ -88,8 +88,6 @@ struct ImagePlanView2: View {
     
     var image: Image?
     
-    @State var lastScaleValue: CGFloat = 1.0
-    
     var body: some View {
         
         ZoomableScrollView {
@@ -100,7 +98,10 @@ struct ImagePlanView2: View {
                 
             } else {
                 
-                image
+                image!
+                    .resizable()
+                    .scaledToFit()
+                    .if(colorScheme == .dark) { $0.colorInvert() }
                 
             }
             

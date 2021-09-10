@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7900165A26E545F200453165 /* ZoomVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900165926E545F200453165 /* ZoomVIew.swift */; };
+		7900165A26E545F200453165 /* ZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900165926E545F200453165 /* ZoomView.swift */; };
 		792AFE2426E8CE350074771F /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2326E8CE350074771F /* LogOutView.swift */; };
 		792AFE2626E903690074771F /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2526E903690074771F /* CryptoUtils.swift */; };
 		792AFE2926E9046E0074771F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AFE2826E9046E0074771F /* Constants.swift */; };
@@ -48,7 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7900165926E545F200453165 /* ZoomVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomVIew.swift; sourceTree = "<group>"; };
+		7900165926E545F200453165 /* ZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
 		792AFE2326E8CE350074771F /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
 		792AFE2526E903690074771F /* CryptoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtils.swift; sourceTree = "<group>"; };
 		792AFE2826E9046E0074771F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				792AFE2D26E905420074771F /* PagerView.swift */,
-				7900165926E545F200453165 /* ZoomVIew.swift */,
+				7900165926E545F200453165 /* ZoomView.swift */,
 				792AFE3126E90C5A0074771F /* ConditionalModifier.swift */,
 			);
 			path = ViewTypes;
@@ -323,7 +323,7 @@
 				792AFE2926E9046E0074771F /* Constants.swift in Sources */,
 				7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */,
 				792AFE3026E905C70074771F /* UserDefaultsUtils.swift in Sources */,
-				7900165A26E545F200453165 /* ZoomVIew.swift in Sources */,
+				7900165A26E545F200453165 /* ZoomView.swift in Sources */,
 				79318D5726EBDAB40051AB70 /* PDFPlanView.swift in Sources */,
 				792AFE2E26E905420074771F /* PagerView.swift in Sources */,
 				795FE21526E39454006EFBCC /* ContentView.swift in Sources */,
