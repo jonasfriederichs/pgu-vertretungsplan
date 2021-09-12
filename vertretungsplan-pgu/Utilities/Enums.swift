@@ -15,4 +15,4 @@ enum Day { case today, tomorrow }
 
 
 
-enum PDFNetworkingError: Error { case unexpectedMimeType, CGPDFError, pdfToImageError, uiImageToImageError }
+

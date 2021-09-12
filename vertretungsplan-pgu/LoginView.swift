@@ -18,6 +18,8 @@ struct LoginView: View {
     @State var username = ""
     @State var password = ""
     
+    @State var error: (Bool, LoginError?) = (false, nil)
+    
     var body: some View {
         VStack {
             
@@ -35,10 +37,20 @@ struct LoginView: View {
             
             Spacer()
             
+            Text($error.1.wrappedValue?.localizedDescription ?? "No error")
+                .foregroundColor(Color.red)
+                .opacity($error.0.wrappedValue ? 1.0 : 0.0)
+                .padding()
+                
+            
             Button("LOGIN") {
                 let result = viewModel.loginButtonPressed(username: username, password: password)
-                loggedIn = result
+                print(result)
+                loggedIn = result.0
+                if result.0 == false { error = (true, result.1) }
+                print(error)
             }
+            .disabled($username.wrappedValue == "" && $password.wrappedValue == "")
             .font(.headline.bold())
             .frame(width: UIScreen.main.bounds.width - 50, height: 50)
             .foregroundColor(Color.white)

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,8 @@
 		796DBDFB26E50830002DD066 /* PlanViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DBDFA26E50830002DD066 /* PlanViews.swift */; };
 		7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998E6D026E5F67400D8E878 /* LoginView.swift */; };
 		7998E6D326E6186F00D8E878 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998E6D226E6186F00D8E878 /* LoginViewModel.swift */; };
+		79ABA77826EE1BEC0027BD96 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABA77726EE1BEC0027BD96 /* WebView.swift */; };
+		79ABA77A26EE22D90027BD96 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABA77926EE22D90027BD96 /* ErrorHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		796DBDFA26E50830002DD066 /* PlanViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViews.swift; sourceTree = "<group>"; };
 		7998E6D026E5F67400D8E878 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7998E6D226E6186F00D8E878 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		79ABA77726EE1BEC0027BD96 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		79ABA77926EE22D90027BD96 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				79318D5026EBCA620051AB70 /* PDFImageUtils.swift */,
 				79318D5226EBCCEE0051AB70 /* NetworkingUtils.swift */,
 				79318D5426EBCD240051AB70 /* Enums.swift */,
+				79ABA77926EE22D90027BD96 /* ErrorHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		792AFE2C26E9051A0074771F /* ViewTypes */ = {
 			isa = PBXGroup;
 			children = (
+				79ABA77726EE1BEC0027BD96 /* WebView.swift */,
 				792AFE2D26E905420074771F /* PagerView.swift */,
 				7900165926E545F200453165 /* ZoomView.swift */,
 				792AFE3126E90C5A0074771F /* ConditionalModifier.swift */,
@@ -278,6 +284,9 @@
 				Base,
 			);
 			mainGroup = 795FE20626E39454006EFBCC;
+			packageReferences = (
+				79ABA77626EE15690027BD96 /* XCRemoteSwiftPackageReference "HTTPKit" */,
+			);
 			productRefGroup = 795FE21026E39454006EFBCC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -322,6 +331,7 @@
 			files = (
 				792AFE2926E9046E0074771F /* Constants.swift in Sources */,
 				7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */,
+				79ABA77A26EE22D90027BD96 /* ErrorHandler.swift in Sources */,
 				792AFE3026E905C70074771F /* UserDefaultsUtils.swift in Sources */,
 				7900165A26E545F200453165 /* ZoomView.swift in Sources */,
 				79318D5726EBDAB40051AB70 /* PDFPlanView.swift in Sources */,
@@ -333,6 +343,7 @@
 				792AFE2B26E904A90074771F /* ImageURLUtils.swift in Sources */,
 				79318D5126EBCA620051AB70 /* PDFImageUtils.swift in Sources */,
 				792AFE2626E903690074771F /* CryptoUtils.swift in Sources */,
+				79ABA77826EE1BEC0027BD96 /* WebView.swift in Sources */,
 				795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */,
 				79318D5326EBCCEE0051AB70 /* NetworkingUtils.swift in Sources */,
 				79318D5526EBCD240051AB70 /* Enums.swift in Sources */,
@@ -656,6 +667,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		79ABA77626EE15690027BD96 /* XCRemoteSwiftPackageReference "HTTPKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Chandlerdea/HTTPKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 795FE20726E39454006EFBCC /* Project object */;
 }

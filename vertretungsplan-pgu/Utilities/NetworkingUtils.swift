@@ -31,9 +31,13 @@ struct NetworkingUtils {
         
         for i in 0...uiimages.count-1 {
             
-            guard let uiimage = uiimages[i] else { continue }
-            
-            // Append placeholder image or throw error here
+            guard let uiimage = uiimages[i] else {
+                
+                print("Error with image: No image loaded")
+                images.append(Image("error-image"))
+                continue
+                
+            }
             
             images.append(Image(uiImage: uiimage))
             

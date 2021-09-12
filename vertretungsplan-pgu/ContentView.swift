@@ -39,6 +39,11 @@ struct ContentView: View {
                         Text("LogOut")
                     }
                 
+                Webview(url: URL(string: "https://www.pgu.de/aktuelles/termine")!)
+                    .tabItem {
+                        Image(systemName: "safari")
+                    }
+                
             }
             
         }
