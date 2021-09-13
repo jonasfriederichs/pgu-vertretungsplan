@@ -41,8 +41,10 @@ struct ImageURLUtils {
             let dataTask = try await urlSession.data(from: createPGUURL(day: .today))
             
             if dataTask.1.mimeType == "image/png" {
+                print("1 image found today")
                 todayURLs.append(createPGUURL(day: .today))
             } else {
+                print("2 images found today")
                 todayURLs.append(createPGUURL(day: .today1))
                 todayURLs.append(createPGUURL(day: .today2))
             }
@@ -55,8 +57,10 @@ struct ImageURLUtils {
             let dataTask = try await urlSession.data(from: createPGUURL(day: .tomorrow))
             
             if dataTask.1.mimeType == "image/png" {
+                print("1 image found tomorrow")
                 tomorrowURLs.append(createPGUURL(day: .tomorrow))
             } else {
+                print("2 images found tomorrow")
                 tomorrowURLs.append(createPGUURL(day: .tomorrow1))
                 tomorrowURLs.append(createPGUURL(day: .tomorrow2))
             }
@@ -95,11 +99,26 @@ struct ImageURLUtils {
         components.scheme = "https"
         components.host = "www.pgu.de"
         
-        switch day {
-        case .today:
-            components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/LZ_heute.pdf"
-        case .tomorrow:
-            components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/LZ_morgen.pdf"
+        switch role {
+            
+        case .teacher:
+            
+            switch day {
+            case .today:
+                components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/LZ_heute.pdf"
+            case .tomorrow:
+                components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/LZ_morgen.pdf"
+            }
+            
+        case .student:
+            
+            switch day {
+            case .today:
+                components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/Forum_heute.pdf"
+            case .tomorrow:
+                components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/Forum_morgen.pdf"
+            }
+            
         }
         
         return components.url!

@@ -50,11 +50,11 @@ struct LoginView: View {
                 if result.0 == false { error = (true, result.1) }
                 print(error)
             }
-            .disabled($username.wrappedValue == "" && $password.wrappedValue == "")
+            .disabled($username.wrappedValue == "" || $password.wrappedValue == "")
             .font(.headline.bold())
             .frame(width: UIScreen.main.bounds.width - 50, height: 50)
             .foregroundColor(Color.white)
-            .background(Color.blue)
+            .background(Color.accentColor)
             .cornerRadius(20)
             
         }

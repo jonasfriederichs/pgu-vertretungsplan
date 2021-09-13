@@ -21,20 +21,39 @@ struct PDFPlanViews: View {
         
         VStack {
             
-            Picker("Tag", selection: $selectedView, content: {
-                ForEach(1...options.count, id: \.self) {
-                    Text(options[$0-1])
+            HStack {
+                
+                Picker("Tag", selection: $selectedView, content: {
+                    ForEach(1...options.count, id: \.self) {
+                        Text(options[$0-1])
+                    }
+                })
+                    .pickerStyle(.segmented)
+                    .padding(20)
+                
+                Button {
+                    selectedView = 1
+                    images = [[]]
+                    Task { do { images = try await NetworkingUtils().getPDFImages(role: role) } catch { print(error) } }
+                } label: {
+                    Image(systemName: "arrow.counterclockwise")
                 }
-            })
-                .pickerStyle(.segmented)
-                .padding(.vertical, 20)
+                .padding()
+
+                
+            }
             
             PDFPlanView(images: images[selectedView-1])
             
         }
         .padding()
         // When appearing get images
-        .onAppear { Task { do { images = try await NetworkingUtils().getPDFImages(role: role) } catch { print(error) } }
+        .onAppear {
+            
+            print("OnAppear PDFPlan called")
+            Task { do { images = try await NetworkingUtils().getPDFImages(role: role) } catch { print(error) }
+                
+            }
             
             
             

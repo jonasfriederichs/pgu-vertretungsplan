@@ -9,31 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
+    @State var defaults = UserDefaultsUtils().getDefaults()
     
     var body: some View {
         
-        if loggedIn == false {
+        if defaults.isLoggedIn == false {
             
-            LoginView(loggedIn: $loggedIn)
+            LoginView(loggedIn: $defaults.isLoggedIn)
             
         } else {
             
             TabView {
                 
-                PlanViews()
+                PDFPlanViews(role: defaults.role)
                     .tabItem {
-                        Image(systemName: "doc")
-                        Text("Vertretungspläne")
+                        Image(systemName: "doc.plaintext")
+                        Text("Schüler")
                     }
                 
-                PDFPlanViews(role: .teacher)
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("Lehrer")
-                    }
-                
-                LogOutView(loggedIn: $loggedIn)
+                LogOutView(loggedIn: $defaults.isLoggedIn)
                     .tabItem {
                         Image(systemName: "trash")
                         Text("LogOut")
@@ -42,6 +36,7 @@ struct ContentView: View {
                 Webview(url: URL(string: "https://www.pgu.de/aktuelles/termine")!)
                     .tabItem {
                         Image(systemName: "safari")
+                        Text("Termine")
                     }
                 
             }
