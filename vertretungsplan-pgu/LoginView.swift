@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    let viewModel = LoginViewModel()
+    let utils = LoginUtils()
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -29,6 +29,7 @@ struct LoginView: View {
                 .resizable()
                 .scaledToFit()
                 .if(colorScheme == .light) { $0.colorInvert() }
+                .padding(30)
             
             Spacer()
             
@@ -44,7 +45,7 @@ struct LoginView: View {
                 
             
             Button("LOGIN") {
-                let result = viewModel.loginButtonPressed(username: username, password: password)
+                let result = utils.loginButtonPressed(username: username, password: password)
                 print(result)
                 loggedIn = result.0
                 if result.0 == false { error = (true, result.1) }
@@ -56,6 +57,8 @@ struct LoginView: View {
             .foregroundColor(Color.white)
             .background(Color.accentColor)
             .cornerRadius(20)
+            
+            Spacer()
             
         }
         
@@ -115,5 +118,6 @@ struct TextFields: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(loggedIn: .constant(false))
+            .preferredColorScheme(.dark)
     }
 }

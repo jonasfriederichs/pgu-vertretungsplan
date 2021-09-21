@@ -44,11 +44,17 @@ struct PagerView<Content: View>: View {
                     Spacer()
                     
                     HStack {
-                        ForEach(0..<self.pageCount, id: \.self) { index in
-                            Circle()
-                                .fill(index == self.currentIndex ? Color.white : Color.gray)
-                                .frame(width: 10, height: 10)
+                        
+                        if pageCount > 1 {
+                            
+                            ForEach(0..<self.pageCount, id: \.self) { index in
+                                Circle()
+                                    .fill(index == self.currentIndex ? Color.primary : Color.secondary)
+                                    .frame(width: 5, height: 5)
+                            }
+                            
                         }
+                        
                     }
                 }
                 .offset(y: 16)

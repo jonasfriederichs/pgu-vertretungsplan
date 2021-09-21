@@ -24,19 +24,19 @@ struct ContentView: View {
                 PDFPlanViews(role: defaults.role)
                     .tabItem {
                         Image(systemName: "doc.plaintext")
-                        Text("Schüler")
-                    }
-                
-                LogOutView(loggedIn: $defaults.isLoggedIn)
-                    .tabItem {
-                        Image(systemName: "trash")
-                        Text("LogOut")
+                        Text("Plan")
                     }
                 
                 Webview(url: URL(string: "https://www.pgu.de/aktuelles/termine")!)
                     .tabItem {
                         Image(systemName: "safari")
                         Text("Termine")
+                    }
+                
+                SettingsView(defaults: $defaults)
+                    .tabItem {
+                        Image(systemName: "gearshape")
+                        Text("Settings")
                     }
                 
             }

@@ -1,15 +1,15 @@
 //
-//  LoginViewModel.swift
-//  LoginViewModel
+//  LoginUtils.swift
+//  LoginUtils
 //
-//  Created by Wolf Jonas Friederichs on 9/6/21.
+//  Created by Wolf Jonas Friederichs on 9/15/21.
 //
 
 import Foundation
 import CryptoKit
 
 
-class LoginViewModel {
+class LoginUtils {
     
     func loginButtonPressed(username: String, password: String) -> (Bool, LoginError?) {
         

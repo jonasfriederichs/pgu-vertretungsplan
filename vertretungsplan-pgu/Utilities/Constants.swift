@@ -14,4 +14,6 @@ struct Constants {
     
     static let hashedPasswordLehrerString = "d9442e64b8ff1ff0076e76cfc9c8455591cf81067be0efb1fc268b36fa457036"
     
+    static let impressum = "© 2021 Jonas Friederichs"
+    
 }
