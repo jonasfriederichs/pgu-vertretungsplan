@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,8 +27,11 @@
 		795FE22526E39459006EFBCC /* vertretungsplan_pguTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE22426E39459006EFBCC /* vertretungsplan_pguTests.swift */; };
 		795FE23026E39459006EFBCC /* vertretungsplan_pguUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE22F26E39459006EFBCC /* vertretungsplan_pguUITests.swift */; };
 		7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998E6D026E5F67400D8E878 /* LoginView.swift */; };
+		799E1DE226FB3843004BCB58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 799E1DE426FB3843004BCB58 /* Localizable.strings */; };
 		79ABA77826EE1BEC0027BD96 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABA77726EE1BEC0027BD96 /* WebView.swift */; };
 		79ABA77A26EE22D90027BD96 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABA77926EE22D90027BD96 /* ErrorHandler.swift */; };
+		79CC4DB92701006500506F91 /* informationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC4DB82701006500506F91 /* informationView.swift */; };
+		79CC4DBB2701129700506F91 /* launchscreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC4DBA2701129700506F91 /* launchscreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +78,12 @@
 		795FE22F26E39459006EFBCC /* vertretungsplan_pguUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vertretungsplan_pguUITests.swift; sourceTree = "<group>"; };
 		795FE23126E39459006EFBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7998E6D026E5F67400D8E878 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		799E1DE326FB3843004BCB58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		799E1DE526FB3847004BCB58 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		79ABA77726EE1BEC0027BD96 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		79ABA77926EE22D90027BD96 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		79CC4DB82701006500506F91 /* informationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = informationView.swift; sourceTree = "<group>"; };
+		79CC4DBA2701129700506F91 /* launchscreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = launchscreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,11 +166,14 @@
 				7921A9A726F1FED700BD3C0F /* SettingsView.swift */,
 				79318D5626EBDAB40051AB70 /* PDFPlanView.swift */,
 				7998E6D026E5F67400D8E878 /* LoginView.swift */,
+				79CC4DB82701006500506F91 /* informationView.swift */,
 				792AFE2726E904290074771F /* Utilities */,
 				792AFE2C26E9051A0074771F /* ViewTypes */,
 				795FE21626E39458006EFBCC /* Assets.xcassets */,
+				79CC4DBA2701129700506F91 /* launchscreen.storyboard */,
 				795FE21B26E39458006EFBCC /* Info.plist */,
 				795FE21826E39458006EFBCC /* Preview Content */,
+				799E1DE426FB3843004BCB58 /* Localizable.strings */,
 			);
 			path = "vertretungsplan-pgu";
 			sourceTree = "<group>";
@@ -278,11 +288,10 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				de,
 			);
 			mainGroup = 795FE20626E39454006EFBCC;
 			packageReferences = (
-				79ABA77626EE15690027BD96 /* XCRemoteSwiftPackageReference "HTTPKit" */,
 			);
 			productRefGroup = 795FE21026E39454006EFBCC /* Products */;
 			projectDirPath = "";
@@ -301,6 +310,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				795FE21A26E39458006EFBCC /* Preview Assets.xcassets in Resources */,
+				79CC4DBB2701129700506F91 /* launchscreen.storyboard in Resources */,
+				799E1DE226FB3843004BCB58 /* Localizable.strings in Resources */,
 				795FE21726E39458006EFBCC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +343,7 @@
 				792AFE3026E905C70074771F /* UserDefaultsUtils.swift in Sources */,
 				7900165A26E545F200453165 /* ZoomView.swift in Sources */,
 				7921A9A826F1FED700BD3C0F /* SettingsView.swift in Sources */,
+				79CC4DB92701006500506F91 /* informationView.swift in Sources */,
 				79318D5726EBDAB40051AB70 /* PDFPlanView.swift in Sources */,
 				792AFE2E26E905420074771F /* PagerView.swift in Sources */,
 				795FE21526E39454006EFBCC /* ContentView.swift in Sources */,
@@ -378,11 +390,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		799E1DE426FB3843004BCB58 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				799E1DE326FB3843004BCB58 /* en */,
+				799E1DE526FB3847004BCB58 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		795FE23226E39459006EFBCC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -444,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -663,17 +689,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		79ABA77626EE15690027BD96 /* XCRemoteSwiftPackageReference "HTTPKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Chandlerdea/HTTPKit.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 795FE20726E39454006EFBCC /* Project object */;
 }

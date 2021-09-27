@@ -13,7 +13,7 @@ struct LoginView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    @Binding var loggedIn: Bool
+    @Binding var defaults: (isLoggedIn: Bool, role: Role)
     
     @State var username = ""
     @State var password = ""
@@ -44,11 +44,11 @@ struct LoginView: View {
                 .padding()
                 
             
-            Button("LOGIN") {
+            Button(LocalizedStringKey("login")) {
                 let result = utils.loginButtonPressed(username: username, password: password)
                 print(result)
-                loggedIn = result.0
-                if result.0 == false { error = (true, result.1) }
+                defaults = (result.0, result.1)
+                if result.0 == false { error = (true, result.2) }
                 print(error)
             }
             .disabled($username.wrappedValue == "" || $password.wrappedValue == "")
@@ -83,7 +83,7 @@ struct TextFields: View {
                 Image(systemName: "person")
                     .frame(width: 35)
                 
-                TextField("USERNAME", text: $email)
+                TextField("username", text: $email)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .padding()
@@ -101,7 +101,7 @@ struct TextFields: View {
                 Image(systemName: "lock")
                     .frame(width: 35)
                 
-                SecureField("PASSWORD", text: $password)
+                SecureField("password", text: $password)
                     .padding()
                     .background(Color.white.opacity(password == "" ? 0 : 0.12))
                     .cornerRadius(15)
@@ -111,13 +111,5 @@ struct TextFields: View {
             .padding()
             
         }
-    }
-}
-
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(loggedIn: .constant(false))
-            .preferredColorScheme(.dark)
     }
 }

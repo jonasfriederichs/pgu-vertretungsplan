@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var defaults = UserDefaultsUtils().getDefaults()
+    @State var defaults = UserDefaultsUtils().getDefaults() {
+        didSet { print(self) } }
     
     var body: some View {
         
         if defaults.isLoggedIn == false {
             
-            LoginView(loggedIn: $defaults.isLoggedIn)
+            LoginView(defaults: $defaults)
             
         } else {
             
@@ -24,19 +25,19 @@ struct ContentView: View {
                 PDFPlanViews(role: defaults.role)
                     .tabItem {
                         Image(systemName: "doc.plaintext")
-                        Text("Plan")
+                        Text(LocalizedStringKey("plan"))
                     }
                 
-                Webview(url: URL(string: "https://www.pgu.de/aktuelles/termine")!)
-                    .tabItem {
-                        Image(systemName: "safari")
-                        Text("Termine")
-                    }
+//                Webview(url: URL(string: "https://www.pgu.de/aktuelles/termine")!)
+//                    .tabItem {
+//                        Image(systemName: "safari")
+//                        Text("Termine")
+//                    }
                 
                 SettingsView(defaults: $defaults)
                     .tabItem {
                         Image(systemName: "gearshape")
-                        Text("Settings")
+                        Text(LocalizedStringKey("settings"))
                     }
                 
             }

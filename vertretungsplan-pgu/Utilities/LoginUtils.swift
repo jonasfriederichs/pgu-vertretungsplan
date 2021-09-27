@@ -11,23 +11,23 @@ import CryptoKit
 
 class LoginUtils {
     
-    func loginButtonPressed(username: String, password: String) -> (Bool, LoginError?) {
+    func loginButtonPressed(username: String, password: String) -> (isLoggedIn: Bool, role: Role, error: LoginError?) {
         
         let hashedString = CryptoUtils().encryptWithSHA256(string: password)
         
         if username.lowercased() == "schueler" && hashedString == Constants.hashedPasswordSchuelerString {
             
             UserDefaultsUtils().setLogIn(status: true, role: .student)
-            return (true, nil)
+            return (isLoggedIn: true, role: .student, error: nil)
             
         } else if username.lowercased() == "lehrer" && hashedString == Constants.hashedPasswordLehrerString {
             
             UserDefaultsUtils().setLogIn(status: true, role: .teacher)
-            return (true, nil)
+            return (isLoggedIn: true, role: .teacher, error: nil)
             
         }
         
-        return (false, LoginError.wrongCredentials)
+        return (isLoggedIn: false, role: .student, error: LoginError.wrongCredentials)
         
     }
     

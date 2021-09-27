@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  vertretungsplan-pgu
+
+  Created by Wolf Jonas Friederichs on 9/22/21.
+  
+*/
+"plan" = "Plan";
+"settings" = "Settings";
+"today" = "Today";
+"tomorrow" = "Tomorrow";
+"signout" = "Sign Out";
+"login" = "Login";
+"someError" = "An error occurred. Please try again later";
+"username" = "USERNAME";
+"password" = "PASSWORD";
+
+
+

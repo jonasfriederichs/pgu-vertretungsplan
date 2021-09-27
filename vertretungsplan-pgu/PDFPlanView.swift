@@ -15,7 +15,9 @@ struct PDFPlanViews: View {
     
     @State var images: [[Image?]] = [[]]
     
-    let options = ["Heute", "Morgen"]
+    @State var error: Error? = nil
+    
+    let options = [LocalizedStringKey("today"), LocalizedStringKey("tomorrow")]
     
     var body: some View {
         
@@ -32,30 +34,48 @@ struct PDFPlanViews: View {
                     .padding(20)
                 
                 Button {
+                    error = nil
                     selectedView = 1
                     images = [[]]
-                    Task { do { images = try await NetworkingUtils().getPDFImages(role: role) } catch { print(error) } }
+                    updatePlans()
                 } label: {
                     Image(systemName: "arrow.counterclockwise")
                 }
                 .padding()
-
+                
                 
             }
             
             PDFPlanView(images: images[selectedView-1])
+            
+            if error != nil {
+                Text("someError")
+                    .foregroundColor(.red)
+                    .padding()
+            }
             
         }
         .padding()
         // When appearing get images
         .onAppear {
             
+            error = nil
             print("OnAppear PDFPlan called")
-            Task { do { images = try await NetworkingUtils().getPDFImages(role: role) } catch { print(error) }
-                
+            updatePlans()
+            
+        }
+        
+    }
+    
+    func updatePlans() {
+        
+        Task {
+            
+            do {
+                images = try await NetworkingUtils().getPDFImages(role: role)
+            } catch {
+                self.error = error
             }
-            
-            
             
         }
         
@@ -84,6 +104,7 @@ struct PDFPlanView: View {
                 }
                 
             }
+            .padding(.bottom, 10)
         } else {
             
             Spacer()
