@@ -10,35 +10,46 @@ import SwiftUI
 struct SettingsView: View {
     
     @Binding var defaults: (isLoggedIn: Bool, role: Role)
+    @State var popover: Bool = false
     
     var body: some View {
         
         VStack {
-        
+            
             Spacer()
             
-            Button("Sign Out") {
+            HStack {
                 
-                defaults = (isLoggedIn: false, role: defaults.role)
-                UserDefaultsUtils().setLogIn(status: false, role: defaults.role)
+                Image(systemName: "lock")
+                
+                Button(LocalizedStringKey("signout")) {
+                    
+                    defaults = (isLoggedIn: false, role: defaults.role)
+                    UserDefaultsUtils().setLogIn(status: false, role: defaults.role)
+                    
+                }
+                .font(.headline.bold())
                 
             }
-            .font(.headline.bold())
             .frame(width: UIScreen.main.bounds.width - 50, height: 50)
-            .foregroundColor(Color.white)
             .background(Color.accentColor)
+            .foregroundColor(Color.white)
             .cornerRadius(20)
-            
             
             Spacer()
             
-            Text(Constants.impressum)
-                .padding()
-                .foregroundColor(Color.secondary)
+            Button("Information") {
+                popover = true
+            }
+            .popover(isPresented: $popover) {
+                informationView()
+            }
+            .padding()
+            
         }
-    
+        
     }
-
+    
 }
 
 struct SettingsView_Previews: PreviewProvider {
