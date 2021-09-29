@@ -7,4 +7,4 @@ Auch für Lehrer ist der Vertretungsplan nutzbar. Sie verwenden bitte die bereit
 Falls Probleme oder ähnliches auftreten sollten, wenden sie sich bitte an mich (info@jonasfriederichs.de).
 
 
-[Privacy Policy](pgu-vertretungsplan/privacyPolicy.html)
+[Privacy Policy](./privacyPolicy.html)
