@@ -10,7 +10,7 @@ import Foundation
 
 struct Vertretung: Codable {
     
-    let hash: String
+    let id: String
     let klasse: String
     let kurs: String
     let stunde: String
@@ -20,5 +20,19 @@ struct Vertretung: Codable {
     let art: String
     let vertretungstext: String
     let date: String
+    
+    enum codingKeys: String, CodingKey {
+        
+        case id = "hash"
+        case klasse
+        case kurs
+        case stunde
+        case vertreter
+        case fach
+        case raum
+        case art
+        case vertretungstext
+        case date
+    }
     
 }

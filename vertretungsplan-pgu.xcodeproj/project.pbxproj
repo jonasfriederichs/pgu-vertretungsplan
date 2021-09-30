@@ -31,6 +31,7 @@
 		79ABA77826EE1BEC0027BD96 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABA77726EE1BEC0027BD96 /* WebView.swift */; };
 		79ABA77A26EE22D90027BD96 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABA77926EE22D90027BD96 /* ErrorHandler.swift */; };
 		79B2FC582705CD2D00E20A31 /* SubstitutionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2FC572705CD2D00E20A31 /* SubstitutionsModel.swift */; };
+		79B2FC5A2705EC2E00E20A31 /* SubstitutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2FC592705EC2E00E20A31 /* SubstitutionView.swift */; };
 		79CC4DB92701006500506F91 /* informationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC4DB82701006500506F91 /* informationView.swift */; };
 		79CC4DBB2701129700506F91 /* launchscreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC4DBA2701129700506F91 /* launchscreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		79ABA77726EE1BEC0027BD96 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		79ABA77926EE22D90027BD96 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		79B2FC572705CD2D00E20A31 /* SubstitutionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstitutionsModel.swift; sourceTree = "<group>"; };
+		79B2FC592705EC2E00E20A31 /* SubstitutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstitutionView.swift; sourceTree = "<group>"; };
 		79CC4DB82701006500506F91 /* informationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = informationView.swift; sourceTree = "<group>"; };
 		79CC4DBA2701129700506F91 /* launchscreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = launchscreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +172,7 @@
 				79318D5626EBDAB40051AB70 /* PDFPlanView.swift */,
 				7998E6D026E5F67400D8E878 /* LoginView.swift */,
 				79CC4DB82701006500506F91 /* informationView.swift */,
+				79B2FC592705EC2E00E20A31 /* SubstitutionView.swift */,
 				792AFE2726E904290074771F /* Utilities */,
 				792AFE2C26E9051A0074771F /* ViewTypes */,
 				795FE21626E39458006EFBCC /* Assets.xcassets */,
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B2FC5A2705EC2E00E20A31 /* SubstitutionView.swift in Sources */,
 				79B2FC582705CD2D00E20A31 /* SubstitutionsModel.swift in Sources */,
 				792AFE2926E9046E0074771F /* Constants.swift in Sources */,
 				7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */,
