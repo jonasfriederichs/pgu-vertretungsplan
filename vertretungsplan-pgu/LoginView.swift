@@ -101,7 +101,7 @@ struct TextFields: View {
                 Image(systemName: "lock")
                     .frame(width: 35)
                 
-                SecureField("password", text: $password)
+                SecureField("PASSWORD", text: $password)
                     .padding()
                     .background(Color.white.opacity(password == "" ? 0 : 0.12))
                     .cornerRadius(15)

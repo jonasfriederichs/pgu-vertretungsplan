@@ -66,4 +66,21 @@ struct NetworkingUtils {
     }
     
     
+    
+    func getVertretungen() async throws -> [Vertretung] {
+        
+        let jsonDecoder = JSONDecoder()
+        
+        let urlSession = URLSession.shared
+        
+        let dataTask = try await urlSession.data(from: URL(string: "https://pgu.backslash-vr.com/api/user/get?code=62rKVAeS")!)
+        
+        let vertretungen = try jsonDecoder.decode([Vertretung].self, from: dataTask.0)
+        
+        return vertretungen
+        
+    }
+    
+    
+    
 }
