@@ -9,9 +9,19 @@ import SwiftUI
 
 struct SubstitutionView: View {
     
+    @State var substitutions: [Vertretung] = []
+    
     var body: some View {
         
         IndividualSubstitutionView()
+            .onAppear {
+                Task {
+                    do {
+                        substitutions = try await NetworkingUtils().getVertretungen()
+                        print(substitutions)
+                    } catch { print(error) }
+                }
+            }
         
     }
     
@@ -22,7 +32,7 @@ struct SubstitutionView_Previews: PreviewProvider {
     static var previews: some View {
         
         SubstitutionView()
-.previewInterfaceOrientation(.portrait)
+            .previewInterfaceOrientation(.portrait)
         
     }
     

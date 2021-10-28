@@ -24,3 +24,9 @@ enum LoginError: LocalizedError {
     }
 }
 
+enum SubstitutionLoadingError: LocalizedError {
+    
+    case StringToDataConversionFail
+
+}
+

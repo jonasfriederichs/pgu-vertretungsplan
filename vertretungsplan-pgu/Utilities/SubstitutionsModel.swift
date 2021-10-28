@@ -14,12 +14,12 @@ struct Vertretung: Codable {
     let klasse: String
     let kurs: String
     let stunde: String
-    let vertreter: String
+    var vertreter: String
     let fach: String
-    let raum: String
+    var raum: String
     let art: String
     let vertretungstext: String
-    let date: String
+    var date: String
     
     enum codingKeys: String, CodingKey {
         
@@ -33,6 +33,28 @@ struct Vertretung: Codable {
         case art
         case vertretungstext
         case date
+    }
+    
+}
+
+struct SubstitutionUtils {
+    
+    static func prepareSubstitution(string: String) throws -> Vertretung {
+        
+        let jsonDecoder = JSONDecoder()
+        
+        guard let stringData = string.data(using: .utf8) else { throw SubstitutionLoadingError.StringToDataConversionFail }
+        
+        var vertretung = try jsonDecoder.decode(Vertretung.self, from: stringData)
+        
+        vertretung.raum = vertretung.raum.split(separator: "?").joined(separator: " ➜ ")
+        
+        vertretung.vertreter = vertretung.vertreter.split(separator: "?").joined(separator: " ➜ ")
+        
+        vertretung.date = vertretung.date.split(separator: "-").joined(separator: ".")
+        
+        return vertretung
+        
     }
     
 }

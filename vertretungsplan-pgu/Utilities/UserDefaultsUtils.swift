@@ -13,6 +13,8 @@ struct UserDefaultStrings {
     
     static let isTeacher = "isTeacher"
     
+    static let classes = "classes"
+    
 }
 
 
@@ -41,6 +43,18 @@ struct UserDefaultsUtils {
         
         return (isLoggedIn, role)
         
+        
+    }
+    
+    func getClass() {
+        
+        UserDefault.string(forKey: UserDefaultStrings.classes)
+        
+    }
+    
+    func setNewClass(newClass: Classes) {
+        
+        UserDefault.set(newClass, forKey: UserDefaultStrings.classes)
         
     }
     

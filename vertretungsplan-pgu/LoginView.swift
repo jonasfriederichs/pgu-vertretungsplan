@@ -73,6 +73,8 @@ struct TextFields: View {
     
     @Binding var password: String
     
+    let passwordString = String(localized: "password")
+    
     var body: some View {
         VStack {
             
@@ -101,7 +103,7 @@ struct TextFields: View {
                 Image(systemName: "lock")
                     .frame(width: 35)
                 
-                SecureField("PASSWORD", text: $password)
+                SecureField(passwordString, text: $password)
                     .padding()
                     .background(Color.white.opacity(password == "" ? 0 : 0.12))
                     .cornerRadius(15)

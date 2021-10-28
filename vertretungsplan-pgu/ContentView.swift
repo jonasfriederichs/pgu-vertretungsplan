@@ -40,6 +40,11 @@ struct ContentView: View {
                         Text(LocalizedStringKey("settings"))
                     }
                 
+                SubstitutionView()
+                    .tabItem {
+                        Text("Test")
+                    }
+                
             }
             
         }

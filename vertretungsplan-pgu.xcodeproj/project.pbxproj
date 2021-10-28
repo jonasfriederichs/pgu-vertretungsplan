@@ -26,6 +26,7 @@
 		795FE21A26E39458006EFBCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795FE21926E39458006EFBCC /* Preview Assets.xcassets */; };
 		795FE22526E39459006EFBCC /* vertretungsplan_pguTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE22426E39459006EFBCC /* vertretungsplan_pguTests.swift */; };
 		795FE23026E39459006EFBCC /* vertretungsplan_pguUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795FE22F26E39459006EFBCC /* vertretungsplan_pguUITests.swift */; };
+		797E1AA7272A833400C2BE59 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E1AA6272A833300C2BE59 /* Classes.swift */; };
 		7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7998E6D026E5F67400D8E878 /* LoginView.swift */; };
 		799E1DE226FB3843004BCB58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 799E1DE426FB3843004BCB58 /* Localizable.strings */; };
 		79ABA77826EE1BEC0027BD96 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABA77726EE1BEC0027BD96 /* WebView.swift */; };
@@ -79,6 +80,7 @@
 		795FE22B26E39459006EFBCC /* vertretungsplan-pguUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "vertretungsplan-pguUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		795FE22F26E39459006EFBCC /* vertretungsplan_pguUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vertretungsplan_pguUITests.swift; sourceTree = "<group>"; };
 		795FE23126E39459006EFBCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		797E1AA6272A833300C2BE59 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		7998E6D026E5F67400D8E878 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		799E1DE326FB3843004BCB58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		799E1DE526FB3847004BCB58 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				79ABA77926EE22D90027BD96 /* ErrorHandler.swift */,
 				7921A9A526F1FC8B00BD3C0F /* LoginUtils.swift */,
 				79B2FC572705CD2D00E20A31 /* SubstitutionsModel.swift */,
+				797E1AA6272A833300C2BE59 /* Classes.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				79ABA77826EE1BEC0027BD96 /* WebView.swift in Sources */,
 				795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */,
 				79318D5326EBCCEE0051AB70 /* NetworkingUtils.swift in Sources */,
+				797E1AA7272A833400C2BE59 /* Classes.swift in Sources */,
 				7921A9A626F1FC8B00BD3C0F /* LoginUtils.swift in Sources */,
 				79318D5526EBCD240051AB70 /* Enums.swift in Sources */,
 				792AFE3226E90C5A0074771F /* ConditionalModifier.swift in Sources */,
@@ -535,6 +539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vertretungsplan-pgu/Preview Content\"";
 				DEVELOPMENT_TEAM = AGE6GEC4L4;
 				ENABLE_PREVIEWS = YES;
@@ -544,6 +549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.jonasfriederichs.vertretungsplan-pgu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -557,6 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"vertretungsplan-pgu/Preview Content\"";
 				DEVELOPMENT_TEAM = AGE6GEC4L4;
 				ENABLE_PREVIEWS = YES;
@@ -566,6 +573,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.jonasfriederichs.vertretungsplan-pgu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
