@@ -28,12 +28,6 @@ struct ContentView: View {
                         Text(LocalizedStringKey("plan"))
                     }
                 
-//                Webview(url: URL(string: "https://www.pgu.de/aktuelles/termine")!)
-//                    .tabItem {
-//                        Image(systemName: "safari")
-//                        Text("Termine")
-//                    }
-                
                 SettingsView(defaults: $defaults)
                     .tabItem {
                         Image(systemName: "gearshape")

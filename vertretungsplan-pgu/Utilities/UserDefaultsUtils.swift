@@ -13,7 +13,7 @@ struct UserDefaultStrings {
     
     static let isTeacher = "isTeacher"
     
-    static let classes = "classes"
+    static let className = "className"
     
 }
 
@@ -33,28 +33,25 @@ struct UserDefaultsUtils {
          
     }
     
-    func getDefaults() -> (isLoggedIn: Bool, role: Role) {
+    func setClassName(name: String) {
+        
+        print("New className in defaults set: \(name)")
+        UserDefault.set(name, forKey: UserDefaultStrings.className)
+        
+    }
+    
+    func getDefaults() -> (isLoggedIn: Bool, role: Role, className: String) {
         
         let isLoggedIn = UserDefault.bool(forKey: UserDefaultStrings.loggedIn)
         
         let isTeacher = UserDefault.bool(forKey: UserDefaultStrings.isTeacher)
         
+        let className = UserDefault.string(forKey: UserDefaultStrings.className) ?? ""
+        
         let role: Role = isTeacher ? .teacher : .student
         
-        return (isLoggedIn, role)
+        return (isLoggedIn, role, className)
         
-        
-    }
-    
-    func getClass() {
-        
-        UserDefault.string(forKey: UserDefaultStrings.classes)
-        
-    }
-    
-    func setNewClass(newClass: Classes) {
-        
-        UserDefault.set(newClass, forKey: UserDefaultStrings.classes)
         
     }
     

@@ -67,48 +67,32 @@ struct NetworkingUtils {
     
     
     
-    func getVertretungen() async throws -> [Vertretung?] {
+    func getVertretungen() async throws -> [Vertretung] {
+        
+        print("getting")
         
         let jsonDecoder = JSONDecoder()
         
         let urlSession = URLSession.shared
         
-        let dataTask = try await urlSession.data(from: URL(string: "https://pgu.backslash-vr.com/api/user/get?code=62rKVAeS")!)
+        let dataTask = try await urlSession.data(from: URL(string: "https://pgu.backslash-vr.com/api/user/get?class=q2")!)
         
         print(dataTask.0)
+
+        var vertretungen = try jsonDecoder.decode([Vertretung].self, from: dataTask.0)
         
-        let vertretungStrings = try jsonDecoder.decode([String].self, from: dataTask.0)
-        
-        var vertretungen: [Vertretung?] = []
-        
-        for i in 1...vertretungStrings.count { vertretungen.append(try? SubstitutionUtils.prepareSubstitution(string: vertretungStrings[i-1])) }
-        
-        return vertretungen
-        
-    }
-    
-    func authorizeCode(code: String) async throws -> Classes? {
-        
-        let urlSession = URLSession.shared
-        let jsonDecoder = JSONDecoder()
-        
-        let dataTask = try await urlSession.data(from: URL(string: "https://pgu.backslash-vr.com/api/user/authorize?code=\(code)")!)
-        
-        if let httpResponse = dataTask.1 as? HTTPURLResponse {
-            if httpResponse.statusCode == 200 {
-                print("Authorization ok")
-            } else {
-                print("Authorization failed: No 200 status code")
-                return nil
+        if !vertretungen.isEmpty {
+            
+            for i in 0...vertretungen.count-1  {
+                
+                vertretungen[i].raum = vertretungen[i].raum.split(separator: "→").joined(separator: " → ")
+                vertretungen[i].vertreter = vertretungen[i].vertreter.split(separator: "→").joined(separator: " → ")
+                
             }
-        } else {
-            print("Authorization failed: No httpResponse")
-            return nil
+        
         }
         
-        let classObject = try jsonDecoder.decode(Classes.self, from: dataTask.0)
-        
-        return classObject
+        return vertretungen
         
     }
     

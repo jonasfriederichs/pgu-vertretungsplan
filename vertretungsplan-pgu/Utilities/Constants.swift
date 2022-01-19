@@ -19,3 +19,9 @@ struct Constants {
     static let informationText = "Hallo, mein Name ist Jonas Friederichs und ich bin Schüler der Q2 hier am PGU. Diese App wurde als Vertretungsplan-App für iOS-Geräte entwickelt und befindet sich momentan in der 1. Version. Falls hier Bugs oder andere Probleme auftreten sollten, meldet diese bitte an mich (info@jonasfriederichs.de) zurück."
     
 }
+
+struct DataStorageConstants {
+    
+    static let classes: [String: Int] = ["5": 3, "6": 3, "7": 3, "8": 3, "9": 4, "EF": 0, "Q1": 0, "Q2": 0]
+    
+}

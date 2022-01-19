@@ -13,7 +13,7 @@ struct LoginView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    @Binding var defaults: (isLoggedIn: Bool, role: Role)
+    @Binding var defaults: (isLoggedIn: Bool, role: Role, className: String)
     
     @State var username = ""
     @State var password = ""
@@ -47,7 +47,7 @@ struct LoginView: View {
             Button(LocalizedStringKey("login")) {
                 let result = utils.loginButtonPressed(username: username, password: password)
                 print(result)
-                defaults = (result.0, result.1)
+                defaults = (result.0, result.1, defaults.className)
                 if result.0 == false { error = (true, result.2) }
                 print(error)
             }

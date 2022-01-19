@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @Binding var defaults: (isLoggedIn: Bool, role: Role)
+    @Binding var defaults: (isLoggedIn: Bool, role: Role, className: String)
     @State var popover: Bool = false
     
     var body: some View {
@@ -24,7 +24,7 @@ struct SettingsView: View {
                 
                 Button(LocalizedStringKey("signout")) {
                     
-                    defaults = (isLoggedIn: false, role: defaults.role)
+                    defaults = (isLoggedIn: false, role: defaults.role, defaults.className)
                     UserDefaultsUtils().setLogIn(status: false, role: defaults.role)
                     
                 }
@@ -54,7 +54,7 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(defaults: .constant((isLoggedIn: true, role: .student)))
+        SettingsView(defaults: .constant((isLoggedIn: true, role: .student, className: "Q2")))
     }
 }
 

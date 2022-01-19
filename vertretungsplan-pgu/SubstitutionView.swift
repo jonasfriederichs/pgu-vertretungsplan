@@ -9,19 +9,34 @@ import SwiftUI
 
 struct SubstitutionView: View {
     
-    @State var substitutions: [Vertretung] = []
+    @State var substitutions: [[Vertretung]] = [[]]
     
     var body: some View {
         
-        IndividualSubstitutionView()
-            .onAppear {
-                Task {
-                    do {
-                        substitutions = try await NetworkingUtils().getVertretungen()
-                        print(substitutions)
-                    } catch { print(error) }
+        HStack {
+            
+            if !substitutions.isEmpty {
+                
+                ScrollView {
+                    
+                    ForEach(substitutions[0], id: \.self) { substitution in
+                        
+                        IndividualSubstitutionView(substitution: substitution)
+                        
+                    }
+                    
                 }
+                
             }
+                
+        }
+        .onAppear {
+            Task {
+                print("getting 2")
+                substitutions = await SubstitutionUtils().getSubstitutions()
+                print(substitutions)
+            }
+        }
         
     }
     
@@ -41,27 +56,33 @@ struct SubstitutionView_Previews: PreviewProvider {
 
 struct IndividualSubstitutionView: View {
     
+    @State var substitution: Vertretung
+    
     var body: some View {
         
         HStack {
             
-            Text("5. Stunde")
+            Text("\(substitution.stunde). Stunde")
                 .fontWeight(.heavy)
             
             Spacer()
             
             VStack {
                 
-                Text("Raumvertretung")
+                // Type
+                Text(substitution.art)
                     .padding(.top, 2.5)
                 
-                Text("Mathematik")
+                // Subject
+                Text(substitution.kurs)
                     .padding(.top, 2.5)
                 
-                Text("KAM -> VOGT")
+                // Teacher
+                Text(substitution.vertreter)
                     .padding(.top, 2.5)
                 
-                Text("105 -> 205")
+                // Room
+                Text(substitution.raum)
                     .padding(.top, 2.5)
                 
             }
@@ -72,7 +93,7 @@ struct IndividualSubstitutionView: View {
         .background(Color.secondary)
         .cornerRadius(20)
         .shadow(color: Color.secondary, radius: 10, x: 20, y: 20)
- 
+        
     }
-
+    
 }
