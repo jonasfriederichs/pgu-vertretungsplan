@@ -25,13 +25,17 @@ struct PDFPlanViews: View {
             
             HStack {
                 
-                Picker("Tag", selection: $selectedView, content: {
-                    ForEach(1...options.count, id: \.self) {
-                        Text(options[$0-1])
-                    }
-                })
+                if images != [[]] {
+                    Picker("Tag", selection: $selectedView, content: {
+                        ForEach(1...options.count, id: \.self) {
+                            Text(options[$0-1])
+                        }
+                    })
                     .pickerStyle(.segmented)
                     .padding(20)
+                } else {
+                    Spacer()
+                }
                 
                 Button {
                     error = nil
