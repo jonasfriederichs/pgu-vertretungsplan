@@ -18,4 +18,38 @@ struct Constants {
     
     static let informationText = "Hallo, mein Name ist Jonas Friederichs und ich bin Schüler der Q2 hier am PGU. Diese App wurde als Vertretungsplan-App für iOS-Geräte entwickelt und befindet sich momentan in der 1. Version. Falls hier Bugs oder andere Probleme auftreten sollten, meldet diese bitte an mich (info@jonasfriederichs.de) zurück."
     
+
+    
+    static func createPDFURL(role: Role, day: Day) -> URL {
+        
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "www.pgu.de"
+        
+        switch role {
+            
+        case .teacher:
+            
+            switch day {
+            case .today:
+                components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/LZ_heute.pdf"
+            case .tomorrow:
+                components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/LZ_morgen.pdf"
+            }
+            
+        case .student:
+            
+            switch day {
+            case .today:
+                components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/Forum_heute.pdf"
+            case .tomorrow:
+                components.path = "/fileadmin/Vertretungsplan/Neu/Plaene/Forum_morgen.pdf"
+            }
+            
+        }
+        
+        return components.url!
+        
+    }
+    
 }

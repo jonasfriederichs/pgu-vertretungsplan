@@ -15,58 +15,59 @@ struct PDFPlanViews: View {
     
     @State var images: [[Image?]] = [[]]
     
-    @State var error: Error? = nil
+    @State var error: Error? = PDFNetworkingError.unexpectedMimeType
     
     let options = [LocalizedStringKey("today"), LocalizedStringKey("tomorrow")]
     
     var body: some View {
         
         VStack {
-            
-            HStack {
                 
-                if images != [[]] {
-                    Picker("Tag", selection: $selectedView, content: {
-                        ForEach(1...options.count, id: \.self) {
-                            Text(options[$0-1])
+                VStack {
+                    
+                    HStack {
+                        
+                        if images != [[]] {
+                            Picker("Tag", selection: $selectedView, content: {
+                                ForEach(1...options.count, id: \.self) {
+                                    Text(options[$0-1])
+                                }
+                            })
+                            .pickerStyle(.segmented)
+                            .padding(20)
+                        } else {
+                            Spacer()
                         }
-                    })
-                    .pickerStyle(.segmented)
-                    .padding(20)
-                } else {
-                    Spacer()
-                }
-                
-                Button {
-                    error = nil
-                    selectedView = 1
-                    images = [[]]
-                    updatePlans()
-                } label: {
-                    Image(systemName: "arrow.counterclockwise")
+                        
+                        Button {
+                            error = nil
+                            selectedView = 1
+                            images = [[]]
+                            updatePlans()
+                        } label: {
+                            Image(systemName: "arrow.counterclockwise")
+                        }
+                        .padding()
+                    }
+                    
+                    if error != nil {
+                        
+                        ErrorView(error: error)
+                        
+                    } else {
+                        
+                        PDFPlanView(images: images[selectedView-1])
+                        
+                    }
+                    
                 }
                 .padding()
-                
-                
-            }
-            
-            PDFPlanView(images: images[selectedView-1])
-            
-            if error != nil {
-                Text("someError")
-                    .foregroundColor(.red)
-                    .padding()
-            }
-            
+
         }
-        .padding()
-        // When appearing get images
         .onAppear {
-            
             error = nil
             print("OnAppear PDFPlan called")
             updatePlans()
-            
         }
         
     }
@@ -82,6 +83,32 @@ struct PDFPlanViews: View {
             }
             
         }
+        
+    }
+    
+}
+
+
+struct PDFPlanViews_Previews: PreviewProvider {
+    static var previews: some View {
+        PDFPlanViews(role: .student)
+    }
+}
+
+
+struct ErrorView: View {
+    
+    var error: Error?
+    
+    var body: some View {
+        
+        Spacer()
+        
+        Text("someError")
+            .foregroundColor(.red)
+            .padding()
+        
+        Spacer()
         
     }
     

@@ -18,7 +18,7 @@ struct NetworkingUtils {
         
         let urlSession = URLSession(configuration: configuration)
         
-        let dataTask = try await urlSession.data(from: ImageURLUtils().createPDFURL(role: role, day: day))
+        let dataTask = try await urlSession.data(from: Constants.createPDFURL(role: role, day: day))
         
         guard dataTask.1.mimeType == "application/pdf" else { throw PDFNetworkingError.unexpectedMimeType }
         
