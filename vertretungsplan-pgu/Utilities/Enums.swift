@@ -10,9 +10,6 @@ import Foundation
 enum Role { case student, teacher }
 
 
-enum Day { case today, tomorrow }
-
-
 
 
 

@@ -12,6 +12,7 @@ enum PDFNetworkingError: LocalizedError {
     case CGPDFError
     case pdfToImageError
     case uiImageToImageError
+    case networkError(Error)
 }
 
 enum LoginError: LocalizedError {

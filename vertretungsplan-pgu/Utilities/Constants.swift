@@ -52,4 +52,19 @@ struct Constants {
         
     }
     
+    
+    
+    enum recordNames: String {
+        
+        case substitution = "Substitution"
+        case metadata = "Metadata"
+        case lastModifiedTimestamp = "LastModifiedTimestamp"
+        
+        var name: String {
+            return self.rawValue
+        }
+        
+    }
+    
+    
 }

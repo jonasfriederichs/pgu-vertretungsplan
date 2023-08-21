@@ -11,57 +11,82 @@ import PDFKit
 
 struct NetworkingUtils {
     
-    func getPDF(role: Role, day: Day) async throws -> [Image] {
+    static let shared = NetworkingUtils()
+    
+    private func fetchPDF(role: Role, day: Day) async -> Result<Data, PDFNetworkingError> {
+        
+        do {
+            
+            let (data, response) = try await urlSessionDataTask(url: Constants.createPDFURL(role: role, day: day))
+            
+            guard response.mimeType == "application/pdf" else { return .failure(.unexpectedMimeType) }
+            
+            return .success(data)
+        } catch {
+            return .failure(.networkError(error))
+        }
+    }
+    
+    private func urlSessionDataTask(url: URL) async throws -> (Data, URLResponse) {
         
         let configuration = URLSessionConfiguration.default
         configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         
         let urlSession = URLSession(configuration: configuration)
         
-        let dataTask = try await urlSession.data(from: Constants.createPDFURL(role: role, day: day))
+        let result: (Data, URLResponse) = try await urlSession.data(from: url)
         
-        guard dataTask.1.mimeType == "application/pdf" else { throw PDFNetworkingError.unexpectedMimeType }
+        return result
         
-        guard let pdfDoc = PDFDocument(data: dataTask.0) else { throw PDFNetworkingError.CGPDFError }
+    }
+ 
+    
+    private func createImageFromPDFData(data: Data) -> Result<[Image], PDFNetworkingError> {
         
-        guard let cgPDF = pdfDoc.documentRef else { throw PDFNetworkingError.CGPDFError }
+        guard let pdfDocument = PDFDocument(data: data) else { return .failure(.CGPDFError) }
         
-        let uiimages = PDFImageUtils().drawPDFAsUIImage(pdfDoc: cgPDF)
+        guard let cgpdf = pdfDocument.documentRef else { return .failure(.CGPDFError)}
         
-        if uiimages == [] { throw PDFNetworkingError.pdfToImageError }
+        let uiimages = PDFImageUtils.drawPDFAsUIImage(pdfDoc: cgpdf)
         
-        var images: [Image] = []
+        guard !uiimages.isEmpty else { return .failure(.pdfToImageError) }
         
-        for i in 0...uiimages.count-1 {
-            
-            guard let uiimage = uiimages[i] else {
-                
-                print("Error with image: No image loaded")
-                images.append(Image("error-image"))
-                continue
-                
-            }
-            
-            images.append(Image(uiImage: uiimage))
-            
+        let images = uiimages.map { image in
+            if image != nil { return Image(uiImage: image!) } else { return Image("error-image") }
         }
         
-        return images
+        return .success(images)
         
     }
     
     
-    func getPDFImages(role: Role) async throws -> [[Image]] {
+    func getPDFImages(role: Role) async -> Result<[[Image]], PDFNetworkingError> {
         
         var imagesArray: [[Image]] = []
         
-        let today = try await getPDF(role: role, day: .today)
-        let tomorrow = try await getPDF(role: role, day: .tomorrow)
+        for day in [Day.today, Day.tomorrow] {
+            
+            let fetchResult = await fetchPDF(role: role, day: day)
+            
+            switch fetchResult {
+            case .success(let data):
+                
+                let imageResult = createImageFromPDFData(data: data)
+                
+                switch imageResult {
+                case .success(let images):
+                    imagesArray.append(images)
+                case .failure(let error):
+                    return .failure(error)
+                }
+                
+            case .failure(let error):
+                return .failure(error)
+            }
+            
+        }
         
-        imagesArray.append(today)
-        imagesArray.append(tomorrow)
-        
-        return imagesArray
+        return .success(imagesArray)
         
     }
     

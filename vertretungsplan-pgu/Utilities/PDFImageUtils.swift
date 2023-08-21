@@ -10,7 +10,7 @@ import UIKit
 
 struct PDFImageUtils {
     
-    func drawPDFAsUIImage(pdfDoc: CGPDFDocument) -> [UIImage?] {
+    static func drawPDFAsUIImage(pdfDoc: CGPDFDocument) -> [UIImage?] {
         
         var images: [UIImage]  = []
         

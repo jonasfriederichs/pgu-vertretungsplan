@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PDFPlanViews: View {
+struct FullPlanView: View {
     
     let role: Role
     
@@ -15,54 +15,54 @@ struct PDFPlanViews: View {
     
     @State var images: [[Image?]] = [[]]
     
-    @State var error: Error? = PDFNetworkingError.unexpectedMimeType
+    @State var error: Error? = nil
     
     let options = [LocalizedStringKey("today"), LocalizedStringKey("tomorrow")]
     
     var body: some View {
         
         VStack {
+            
+            VStack {
                 
-                VStack {
+                HStack {
                     
-                    HStack {
-                        
-                        if images != [[]] {
-                            Picker("Tag", selection: $selectedView, content: {
-                                ForEach(1...options.count, id: \.self) {
-                                    Text(options[$0-1])
-                                }
-                            })
-                            .pickerStyle(.segmented)
-                            .padding(20)
-                        } else {
-                            Spacer()
-                        }
-                        
-                        Button {
-                            error = nil
-                            selectedView = 1
-                            images = [[]]
-                            updatePlans()
-                        } label: {
-                            Image(systemName: "arrow.counterclockwise")
-                        }
-                        .padding()
-                    }
-                    
-                    if error != nil {
-                        
-                        ErrorView(error: error)
-                        
+                    if images != [[]] {
+                        Picker("Tag", selection: $selectedView, content: {
+                            ForEach(1...options.count, id: \.self) {
+                                Text(options[$0-1])
+                            }
+                        })
+                        .pickerStyle(.segmented)
+                        .padding(20)
                     } else {
-                        
-                        PDFPlanView(images: images[selectedView-1])
-                        
+                        Spacer()
                     }
+                    
+                    Button {
+                        error = nil
+                        selectedView = 1
+                        images = [[]]
+                        updatePlans()
+                    } label: {
+                        Image(systemName: "arrow.counterclockwise")
+                    }
+                    .padding()
+                }
+                
+                if error != nil {
+                    
+                    ErrorView(error: error)
+                    
+                } else {
+                    
+                    PDFPlanView(images: images[selectedView-1])
                     
                 }
-                .padding()
-
+                
+            }
+            .padding()
+            
         }
         .onAppear {
             error = nil
@@ -76,9 +76,12 @@ struct PDFPlanViews: View {
         
         Task {
             
-            do {
-                images = try await NetworkingUtils().getPDFImages(role: role)
-            } catch {
+            let networkResult = await NetworkingUtils.shared.getPDFImages(role: role)
+            
+            switch networkResult {
+            case .success(let images):
+                self.images = images
+            case .failure(let error):
                 self.error = error
             }
             
@@ -89,9 +92,9 @@ struct PDFPlanViews: View {
 }
 
 
-struct PDFPlanViews_Previews: PreviewProvider {
+struct FullPlanView_Previews: PreviewProvider {
     static var previews: some View {
-        PDFPlanViews(role: .student)
+        FullPlanView(role: .student)
     }
 }
 
@@ -104,7 +107,7 @@ struct ErrorView: View {
         
         Spacer()
         
-        Text("someError")
+        Text(error?.localizedDescription ?? "someError")
             .foregroundColor(.red)
             .padding()
         
@@ -130,7 +133,7 @@ struct PDFPlanView: View {
                 
                 ForEach(1...images.count, id: \.self) { urlCount in
                     
-                    ImagePlanView2(image: images[urlCount-1])
+                    ImagePlanView(image: images[urlCount-1])
                     
                 }
                 
@@ -153,7 +156,7 @@ struct PDFPlanView: View {
 
 
 
-struct ImagePlanView2: View {
+struct ImagePlanView: View {
     
     @Environment(\.colorScheme) var colorScheme
     

@@ -31,6 +31,23 @@
 		79ABA77A26EE22D90027BD96 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ABA77926EE22D90027BD96 /* ErrorHandler.swift */; };
 		79CC4DB92701006500506F91 /* informationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC4DB82701006500506F91 /* informationView.swift */; };
 		79CC4DBB2701129700506F91 /* launchscreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CC4DBA2701129700506F91 /* launchscreen.storyboard */; };
+		FA6B3A7C2A927D96004634A2 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B3A7B2A927D96004634A2 /* CloudKitHelper.swift */; };
+		FA6B3A7F2A92AA6F004634A2 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B3A7E2A92AA6F004634A2 /* Metadata.swift */; };
+		FA6B3A812A92AB72004634A2 /* CloudKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B3A802A92AB72004634A2 /* CloudKitModel.swift */; };
+		FACF2B7C2A449FA40047817B /* Substitution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B792A449FA40047817B /* Substitution.swift */; };
+		FACF2B7D2A449FA40047817B /* Substitution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B792A449FA40047817B /* Substitution.swift */; };
+		FACF2B7E2A449FA40047817B /* Substitution.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B792A449FA40047817B /* Substitution.swift */; };
+		FACF2B7F2A449FA40047817B /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B7A2A449FA40047817B /* Day.swift */; };
+		FACF2B802A449FA40047817B /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B7A2A449FA40047817B /* Day.swift */; };
+		FACF2B812A449FA40047817B /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B7A2A449FA40047817B /* Day.swift */; };
+		FACF2B822A449FA40047817B /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B7B2A449FA40047817B /* Subject.swift */; };
+		FACF2B832A449FA40047817B /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B7B2A449FA40047817B /* Subject.swift */; };
+		FACF2B842A449FA40047817B /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B7B2A449FA40047817B /* Subject.swift */; };
+		FACF2B8C2A44A0C10047817B /* SubstitutionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B8A2A44A0C10047817B /* SubstitutionCard.swift */; };
+		FACF2B8F2A44A0C10047817B /* SubstitutionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B8B2A44A0C10047817B /* SubstitutionList.swift */; };
+		FACF2B932A44AC4D0047817B /* SubstitutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B922A44AC4D0047817B /* SubstitutionViewModel.swift */; };
+		FACF2B942A44AC4D0047817B /* SubstitutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B922A44AC4D0047817B /* SubstitutionViewModel.swift */; };
+		FACF2B952A44AC4D0047817B /* SubstitutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF2B922A44AC4D0047817B /* SubstitutionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +99,16 @@
 		79ABA77926EE22D90027BD96 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		79CC4DB82701006500506F91 /* informationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = informationView.swift; sourceTree = "<group>"; };
 		79CC4DBA2701129700506F91 /* launchscreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = launchscreen.storyboard; sourceTree = "<group>"; };
+		FA6B3A7B2A927D96004634A2 /* CloudKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
+		FA6B3A7D2A927DF0004634A2 /* vertretungsplan-pgu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "vertretungsplan-pgu.entitlements"; sourceTree = "<group>"; };
+		FA6B3A7E2A92AA6F004634A2 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		FA6B3A802A92AB72004634A2 /* CloudKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitModel.swift; sourceTree = "<group>"; };
+		FACF2B792A449FA40047817B /* Substitution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Substitution.swift; sourceTree = "<group>"; };
+		FACF2B7A2A449FA40047817B /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		FACF2B7B2A449FA40047817B /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		FACF2B8A2A44A0C10047817B /* SubstitutionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstitutionCard.swift; sourceTree = "<group>"; };
+		FACF2B8B2A44A0C10047817B /* SubstitutionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstitutionList.swift; sourceTree = "<group>"; };
+		FACF2B922A44AC4D0047817B /* SubstitutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstitutionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,12 +185,16 @@
 		795FE21126E39454006EFBCC /* vertretungsplan-pgu */ = {
 			isa = PBXGroup;
 			children = (
+				FA6B3A7D2A927DF0004634A2 /* vertretungsplan-pgu.entitlements */,
 				795FE21226E39454006EFBCC /* vertretungsplan_pguApp.swift */,
 				795FE21426E39454006EFBCC /* ContentView.swift */,
-				7921A9A726F1FED700BD3C0F /* SettingsView.swift */,
-				79318D5626EBDAB40051AB70 /* PDFPlanView.swift */,
-				7998E6D026E5F67400D8E878 /* LoginView.swift */,
-				79CC4DB82701006500506F91 /* informationView.swift */,
+				FA6B3A7B2A927D96004634A2 /* CloudKitHelper.swift */,
+				FA6B3A802A92AB72004634A2 /* CloudKitModel.swift */,
+				FACF2B892A44A0A20047817B /* SubstitutionView */,
+				FACF2B852A449FB30047817B /* Models */,
+				FACF2B882A44A07C0047817B /* LoginView */,
+				FACF2B872A44A0510047817B /* SettingsView */,
+				FACF2B862A44A0380047817B /* FullPlanView */,
 				792AFE2726E904290074771F /* Utilities */,
 				792AFE2C26E9051A0074771F /* ViewTypes */,
 				795FE21626E39458006EFBCC /* Assets.xcassets */,
@@ -199,6 +230,52 @@
 				795FE23126E39459006EFBCC /* Info.plist */,
 			);
 			path = "vertretungsplan-pguUITests";
+			sourceTree = "<group>";
+		};
+		FACF2B852A449FB30047817B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FACF2B7A2A449FA40047817B /* Day.swift */,
+				FACF2B7B2A449FA40047817B /* Subject.swift */,
+				FACF2B792A449FA40047817B /* Substitution.swift */,
+				FA6B3A7E2A92AA6F004634A2 /* Metadata.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FACF2B862A44A0380047817B /* FullPlanView */ = {
+			isa = PBXGroup;
+			children = (
+				79318D5626EBDAB40051AB70 /* PDFPlanView.swift */,
+			);
+			path = FullPlanView;
+			sourceTree = "<group>";
+		};
+		FACF2B872A44A0510047817B /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				7921A9A726F1FED700BD3C0F /* SettingsView.swift */,
+				79CC4DB82701006500506F91 /* informationView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		FACF2B882A44A07C0047817B /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				7998E6D026E5F67400D8E878 /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		FACF2B892A44A0A20047817B /* SubstitutionView */ = {
+			isa = PBXGroup;
+			children = (
+				FACF2B8B2A44A0C10047817B /* SubstitutionList.swift */,
+				FACF2B8A2A44A0C10047817B /* SubstitutionCard.swift */,
+				FACF2B922A44AC4D0047817B /* SubstitutionViewModel.swift */,
+			);
+			path = SubstitutionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +342,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					795FE20E26E39454006EFBCC = {
 						CreatedOnToolsVersion = 12.5;
@@ -339,21 +416,30 @@
 				792AFE2926E9046E0074771F /* Constants.swift in Sources */,
 				7998E6D126E5F67400D8E878 /* LoginView.swift in Sources */,
 				79ABA77A26EE22D90027BD96 /* ErrorHandler.swift in Sources */,
+				FA6B3A7C2A927D96004634A2 /* CloudKitHelper.swift in Sources */,
 				792AFE3026E905C70074771F /* UserDefaultsUtils.swift in Sources */,
 				7900165A26E545F200453165 /* ZoomView.swift in Sources */,
+				FACF2B8F2A44A0C10047817B /* SubstitutionList.swift in Sources */,
 				7921A9A826F1FED700BD3C0F /* SettingsView.swift in Sources */,
 				79CC4DB92701006500506F91 /* informationView.swift in Sources */,
 				79318D5726EBDAB40051AB70 /* PDFPlanView.swift in Sources */,
 				792AFE2E26E905420074771F /* PagerView.swift in Sources */,
 				795FE21526E39454006EFBCC /* ContentView.swift in Sources */,
+				FACF2B8C2A44A0C10047817B /* SubstitutionCard.swift in Sources */,
 				79318D5126EBCA620051AB70 /* PDFImageUtils.swift in Sources */,
 				792AFE2626E903690074771F /* CryptoUtils.swift in Sources */,
+				FA6B3A812A92AB72004634A2 /* CloudKitModel.swift in Sources */,
 				79ABA77826EE1BEC0027BD96 /* WebView.swift in Sources */,
 				795FE21326E39454006EFBCC /* vertretungsplan_pguApp.swift in Sources */,
 				79318D5326EBCCEE0051AB70 /* NetworkingUtils.swift in Sources */,
 				7921A9A626F1FC8B00BD3C0F /* LoginUtils.swift in Sources */,
+				FACF2B822A449FA40047817B /* Subject.swift in Sources */,
+				FA6B3A7F2A92AA6F004634A2 /* Metadata.swift in Sources */,
+				FACF2B7C2A449FA40047817B /* Substitution.swift in Sources */,
 				79318D5526EBCD240051AB70 /* Enums.swift in Sources */,
+				FACF2B7F2A449FA40047817B /* Day.swift in Sources */,
 				792AFE3226E90C5A0074771F /* ConditionalModifier.swift in Sources */,
+				FACF2B932A44AC4D0047817B /* SubstitutionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +447,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACF2B942A44AC4D0047817B /* SubstitutionViewModel.swift in Sources */,
+				FACF2B832A449FA40047817B /* Subject.swift in Sources */,
+				FACF2B7D2A449FA40047817B /* Substitution.swift in Sources */,
 				795FE22526E39459006EFBCC /* vertretungsplan_pguTests.swift in Sources */,
+				FACF2B802A449FA40047817B /* Day.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +459,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACF2B952A44AC4D0047817B /* SubstitutionViewModel.swift in Sources */,
+				FACF2B842A449FA40047817B /* Subject.swift in Sources */,
+				FACF2B7E2A449FA40047817B /* Substitution.swift in Sources */,
 				795FE23026E39459006EFBCC /* vertretungsplan_pguUITests.swift in Sources */,
+				FACF2B812A449FA40047817B /* Day.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +534,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -454,7 +549,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -503,6 +598,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -511,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -526,13 +622,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "vertretungsplan-pgu/vertretungsplan-pgu.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = b1;
 				DEVELOPMENT_ASSET_PATHS = "\"vertretungsplan-pgu/Preview Content\"";
 				DEVELOPMENT_TEAM = AGE6GEC4L4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "vertretungsplan-pgu/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_CFBundleDisplayName = PGU;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,13 +649,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "vertretungsplan-pgu/vertretungsplan-pgu.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = b1;
 				DEVELOPMENT_ASSET_PATHS = "\"vertretungsplan-pgu/Preview Content\"";
 				DEVELOPMENT_TEAM = AGE6GEC4L4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "vertretungsplan-pgu/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_CFBundleDisplayName = PGU;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
